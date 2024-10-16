@@ -123,7 +123,7 @@
                             <li><a href="index.html"><i class="fab fa-vimeo-v"></i></a></li-->
                         </ul>
                         <div class="sign-box">
-                            <a href="pages/login.html"><i class="fas fa-user"></i>ลงชื่อใช้งาน</a>
+                            <a href="pages/login.html" target="_blank"><i class="fas fa-user"></i>ลงชื่อใช้งาน</a>
                         </div>
                     </div>
                 </div>
@@ -177,12 +177,12 @@
                                                 <li><a href="property-list-3.html">- บ้านรีโนเวท</a>
                                             </ul>
                                         </li>
-                                        <li class="dropdown"><a><span>เอเจน</span></a>
+                                        <!-- <li class="dropdown"><a><span>เอเจน</span></a>
                                             <ul>
                                                 <li><a href="agency-list.html">- รายชื่อเอเจน</a></li>
                                                 <li><a href="agency-details.html">- รายละเอียดเอเจน</a></li>
                                             </ul>
-                                        </li>
+                                        </li> -->
                                         <li class="current"><a href="contact.html"><span>ติดต่อ</span></a></li> 
                                     </ul>
                                 </div>
@@ -255,28 +255,28 @@
                     </div>
                     <div class="search-field">
                         <div class="tabs-box">
-                            <div class="tab-btn-box">
+                            <!-- <div class="tab-btn-box">
                                 <ul class="tab-btns tab-buttons centred clearfix">
                                     <li class="tab-btn active-btn" data-tab="#tab-1">ซื้อ</li>
                                     <li class="tab-btn" data-tab="#tab-2">ขาย</li>
                                 </ul>
-                            </div>
+                            </div> -->
                             <div class="tabs-content info-group">
                                 <div class="tab active-tab" id="tab-1">
                                     <div class="inner-box">
                                         <div class="top-search">
-                                            <form action="index.html" method="post" class="search-form">
+                                            <form  id="search-property" class="search-form">
                                                 <div class="row clearfix">
-                                                    <div class="col-lg-4 col-md-12 col-sm-12 column">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 column">
                                                         <div class="form-group">
                                                             <label>ค้นหาอสังหาริมทรัพย์</label>
                                                             <div class="field-input">
                                                                 <i class="fas fa-search"></i>
-                                                                <input type="search" name="search-field" placeholder="ค้นหาตามทรัพย์สิน ที่ตั้ง หรือแลนด์มาร์ค..." required="">
+                                                                <input id="txt_property_search_name" type="search" name="search-field" placeholder="ค้นหาตามทรัพย์สิน ที่ตั้ง หรือแลนด์มาร์ค..." required="">
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4 col-md-6 col-sm-12 column">
+                                                    <!-- <div class="col-lg-4 col-md-6 col-sm-12 column">
                                                         <div class="form-group">
                                                             <label>ที่ตั้ง</label>
                                                             <div class="select-box">
@@ -297,17 +297,16 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-lg-4 col-md-6 col-sm-12 column">
+                                                    </div> -->
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 column">
                                                         <div class="form-group">
                                                             <label>ประเภทอสังหาริมทรัพย์</label>
                                                             <div class="select-box">
-                                                                <select class="wide">
-                                                                   <option data-display="ประเภทอสังหาริมทรัพย์">ประเภทอสังหาริมทรัพย์</option>
-                                                                   <option value="1">Luxury</option>
-                                                                   <option value="2">Tropical</option>
-                                                                   <option value="3">Modern</option>
-                                                                   <option value="4">New</option>
+                                                                <select class="wide" id="dd_property_search_collection">
+                                                                   <option value="" data-display="ประเภทอสังหาริมทรัพย์" disabled selected>ประเภทอสังหาริมทรัพย์</option>
+                                                                   <option value="1">บ้านสั่งสร้าง</option>
+                                                                   <option value="2">บ้านสร้างใหม่</option>
+                                                                   <option value="3">บ้านรีโนเวท</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -609,6 +608,20 @@
                 </div>
             </div>
         </section>
+
+        <section class="px-5 pb-5 hide bg-secondary" id="search-result">
+            <div class="text-right p-5">
+                <a id="btn-hide-search" class="pull-right text-danger" href="#">Hide Search</a>
+            </div>
+            <div class="deals-grid-content grid-item">
+                
+                <div class="row clearfix px-5" id="all-property-grid">
+                    
+
+                   
+                </div>
+            </div>
+        </section>
         <!-- banner-section end -->
 <!-- /***********************************************************************************************************************************/ -->
         <!-- category-section -->
@@ -622,7 +635,7 @@
                                     <div class="icon-box"><img src="https://cdn4.iconfinder.com/data/icons/build-a-house-outline/512/wall_build_cement_masonry_brick_architecture_block-512.png" alt="Icon" />
                                     </div>
                                     <h5><a href="property-list.html">บ้านสั่งสร้าง</a></h5>
-                                    <span>2</span>
+                                    <span id="categoryCount1">2</span>
                                 </div>
                             </div>
                         </li>
@@ -632,7 +645,7 @@
                                     <div class="icon-box"><img src="https://cdn0.iconfinder.com/data/icons/home-27/100/New_House-512.png" alt="Icon" />
                                     </div>
                                     <h5><a href="property-list-2.html">บ้านสร้างใหม่</a></h5>
-                                    <span>2</span>
+                                    <span id="categoryCount2">2</span>
                                 </div>
                             </div>
                         </li>
@@ -642,7 +655,7 @@
                                     <div class="icon-box"><img src="https://cdn4.iconfinder.com/data/icons/construction-11/500/Construction-2_8-512.png" alt="Icon" />
                                     </div>
                                     <h5><a href="property-list-3.html">บ้านรีโนเวท</a></h5>
-                                    <span>2</span>
+                                    <span id="categoryCount3">2</span>
                                 </div>
                             </div>
                         </li>
@@ -681,9 +694,9 @@
                     <h2>อสังหาริมทรัพย์ที่มีผู้คนสนใจมากที่สุด</h2>
                     <p>อสังหาริมทรัพย์ที่มีคนเข้าชม สนใจ มาก!!</p>
                 </div>
-                <div class="row clearfix">
+                <div class="row clearfix" id="Popular-list">
                     <!--/*****************************************************************************************************-->
-                    <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                    <!-- <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                         <div class="feature-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="image-box">
@@ -715,9 +728,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!--/*****************************************************************************************************-->
-                    <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                    <!-- <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                         <div class="feature-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="image-box">
@@ -739,10 +752,6 @@
                                             <h6>ขาย</h6>
                                             <h4> 7,990,000 บาท(Baht)</h4>
                                         </div>
-                                        <!--ul class="other-option pull-right clearfix">
-                                            <li><a href="property-details.html"><i class="icon-12"></i></a></li>
-                                            <li><a href="property-details.html"><i class="icon-13"></i></a></li>
-                                        </ul-->
                                     </div>
                                     <ul class="more-details clearfix">
                                         <li><i class="icon-14"></i>4 Beds</li>
@@ -753,9 +762,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!--/*****************************************************************************************************-->
-                    <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                    <!-- <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
                         <div class="feature-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="image-box">
@@ -777,10 +786,7 @@
                                             <h6>ขาย</h6>
                                             <h4>2,490,000 บาท(Baht)</h4>
                                         </div>
-                                        <!--ul class="other-option pull-right clearfix">
-                                            <li><a href="property-details.html"><i class="icon-12"></i></a></li>
-                                            <li><a href="property-details.html"><i class="icon-13"></i></a></li>
-                                        </ul-->
+
                                     </div>
                                     <p> </p>
                                     <ul class="more-details clearfix">
@@ -792,7 +798,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="more-btn centred"><a href="property_list-4.html" class="theme-btn btn-one">View All Listing</a></div>
             </div>
@@ -1414,7 +1420,7 @@
             <div class="footer-bottom">
                 <div class="auto-container">
                     <div class="inner-box clearfix">
-                        <figure class="footer-logo"><a><img src="assets/images/Logo_Ihome168.png" alt=""></a></figure>
+                        <figure class="footer-logo text-center"><a><img src="assets/images/Logo_Ihome168.png" alt="" style="max-width: 46%;"></a></figure>
                         <div class="copyright pull-left">
                             <p><a>iHOME168 Property Consultant</a> &copy; 2021 All Right Reserved</p>
                         </div>
@@ -1433,26 +1439,244 @@
             <span class="fal fa-angle-up"></span>
         </button>
     </div>
+<!-- jequery plugins -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/validation.js"></script>
+<script src="assets/js/jquery.fancybox.js"></script>
+<script src="assets/js/appear.js"></script>
+<script src="assets/js/scrollbar.js"></script>
+<script src="assets/js/isotope.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<script src="assets/js/jQuery.style.switcher.min.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script src="assets/js/nav-tool.js"></script>
+
+<!-- main-js -->
+<script src="assets/js/script.js"></script>
+
+<script>
+    getPropertyCount();
+    getPopularProperty();
+    document.getElementById('search-property').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const propertySearchName = document.getElementById('txt_property_search_name').value;
+        const propertySearchCollection = document.getElementById('dd_property_search_collection').value;
+        $('#all-property-grid').empty();
+        try {
+            fetch('/api/getPropertyBySearch', {
+                method: 'POST', // ใช้ POST แทน GET
+                headers: {
+                    'Content-Type': 'application/json', // กำหนด Content-Type เป็น JSON
+                },
+                body: JSON.stringify({ title : propertySearchName.trim(), category : propertySearchCollection}) // ส่ง id ผ่าน body ของ POST request
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json(); // แปลง response ให้เป็น JSON
+                })
+                .then(data => {
+                    if (data && Array.isArray(data) && data.length > 0) {
+                        // วนลูปข้อมูลที่ได้รับ
+                        data.forEach(item => {
+                        
+                            
+                            const propertyGrid = document.createElement('div');
+                            propertyGrid.className = 'col-lg-6 col-md-6 col-sm-12 feature-block';
+                            propertyGrid.innerHTML = `
+                                                    <div class="feature-block-one">
+                                                        <div class="inner-box">
+                                                            <div class="image-box">
+                                                                <figure class="image"><img
+                                                                        src="assets/images/property/${item.titleImage}" alt="">
+                                                                </figure>
+                                                                <div class="batch"><i class="icon-11"></i></div>
+                                                                <span class="category">Featured</span>
+                                                            </div>
+                                                            <div class="lower-content">
+                                                                <div class="author-info clearfix">
+                                                                    <div class="author pull-left">
+                                                                        <figure class="author-thumb"><img
+                                                                                src="assets/images/feature/author-1.jpg" alt="">
+                                                                        </figure>
+                                                                        <h6>${item.agent}</h6>
+                                                                    </div>
+                                                                    <div class="buy-btn pull-right"><a
+                                                                            href="property-details.html?id=${item.id}"">For Buy</a></div>
+                                                                </div>
+                                                                <div class="title-text">
+                                                                    <h4><a href="property-details.html?id=${item.id}"">${item.title}</a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div class="price-box clearfix">
+                                                                    <div class="price-info pull-left">
+                                                                        <h6>Start From</h6>
+                                                                        <h4>฿ ${parseFloat(item.price).toLocaleString('en-US')}</h4>
+                                                                    </div>
+                                                                    <!--<ul class="other-option pull-right clearfix">
+                                                                        <li><a href="property-details.html?id=${item.id}""><i
+                                                                                    class="icon-12"></i></a></li>
+                                                                        <li><a href="property-details.html?id=${item.id}""><i
+                                                                                    class="icon-13"></i></a></li>
+                                                                    </ul>-->
+                                                                </div>
+                                                                <!--<p>Lorem ipsum dolor sit amet consectetur adipisicing sed.</p>-->
+                                                                <ul class="more-details clearfix">
+                                                                    <li><i class="icon-14"></i>${item.bedrooms} Beds</li>
+                                                                    <li><i class="icon-15"></i>${item.bathrooms} Baths</li>
+                                                                    <li><i class="icon-16"></i>${item.area} sq M</li>
+                                                                </ul>
+                                                                <div class="btn-box"><a href="property-details.html?id=${item.id}""
+                                                                        class="theme-btn btn-two">See Details</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+                            `;
+                            document.getElementById('all-property-grid').appendChild(propertyGrid);
+                            document.getElementById('search-result').classList.remove('hide');
+                                
+                        });
+                    } else {
+                        alert('ไม่พบข้อมูล'); // แจ้งถ้าไม่มีข้อมูล
+                    }
 
 
-    <!-- jequery plugins -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/validation.js"></script>
-    <script src="assets/js/jquery.fancybox.js"></script>
-    <script src="assets/js/appear.js"></script>
-    <script src="assets/js/scrollbar.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/jQuery.style.switcher.min.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/js/nav-tool.js"></script>
+                    
+                })
 
-    <!-- main-js -->
-    <script src="assets/js/script.js"></script>
+            // เรียก API /api/login
+            // const response = await fetch('/api/login', {
+            // method: 'POST',
+            // headers: {
+            //     'Content-Type': 'application/json'
+            // },
+            // body: JSON.stringify({ email, password })
+            // });
+
+            // // ตรวจสอบสถานะของการตอบกลับจากเซิร์ฟเวอร์
+            // const result = await response.json();
+
+            // if (response.ok && result.success) {
+            // const user = response.firstName;
+            // // เปลี่ยนหน้าไปยัง Main.html
+            // window.location.href = '/Main.html';
+            // } else {
+            // alert(result.message || 'Login failed.');
+            // }
+        } catch (error) {
+            console.error('Error during login:', error);
+            alert('An error occurred during login.');
+        }
+    });
+
+
+    document.getElementById('btn-hide-search').addEventListener('click', function(event) {
+        event.preventDefault(); // ป้องกันการทำงานลิ้งค์
+        const searchSection = document.getElementById('search-result');
+        searchSection.classList.add('hide');  // ซ่อนส่วนการค้นหา
+        $('#all-property-grid').empty();
+    });
+
+
+    function getPropertyCount(){
+        fetch('/api/getPropertyCount', {
+                method: 'POST', // ใช้ POST แทน GET
+                headers: {
+                    'Content-Type': 'application/json', // กำหนด Content-Type เป็น JSON
+                },
+                //body: JSON.stringify({ id: "1" }) // ส่ง id ผ่าน body ของ POST request
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json(); // แปลง response ให้เป็น JSON
+            })
+            .then(data => {
+                document.getElementById('categoryCount1').textContent = data.category1;
+                document.getElementById('categoryCount2').textContent = data.category2;
+                document.getElementById('categoryCount3').textContent = data.category3;
+            })
+            .catch(error => {
+                console.error('เกิดข้อผิดพลาด:', error);
+            });
+    }
+
+    function getPopularProperty(){
+        try {
+            fetch('/api/getPopularProperty', {
+                method: 'POST', // ใช้ POST แทน GET
+                headers: {
+                    'Content-Type': 'application/json', // กำหนด Content-Type เป็น JSON
+                }
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json(); // แปลง response ให้เป็น JSON
+                })
+                .then(data => {
+                    if (data && Array.isArray(data) && data.length > 0) {
+                        // วนลูปข้อมูลที่ได้รับ
+                        data.forEach(item => {
+                        
+                            
+                            const propertyGrid = document.createElement('div');
+                            propertyGrid.className = 'col-lg-4 col-md-6 col-sm-12 feature-block';
+                            propertyGrid.innerHTML = ` 
+                                <div class="feature-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                    <div class="inner-box">
+                                        <div class="image-box">
+                                            <figure class="image"><img src="assets/images/property/${item.titleImage}"  alt=""></figure>
+                                            <div class="batch"><i class="icon-11"></i></div>
+                                            <span class="category">คุณสมบัติ</span>
+                                        </div>
+                                        <div class="lower-content">
+                                            <div class="author-info clearfix">
+                                                <div class="author pull-left">
+                                                    <figure class="author-thumb"><img src="assets/images/feature/author-1.jpg" alt=""></figure>
+                                                    <h6>${item.agent}</h6>
+                                                </div>
+                                                <div class="buy-btn pull-right"><a href=" ">For Rent</a></div>
+                                            </div>
+                                            <div class="title-text"><h4><a href=" ">${item.title}</a></h4></div>
+                                            <div class="price-box clearfix">
+                                                <div class="price-info pull-left">
+                                                    <h6>ราคา</h6>
+                                                    <h4>${item.price} บาท(Baht)/เดือน(Month)</h4>
+                                                </div>
+                                            </div>
+                                            <ul class="more-details clearfix">
+                                                <li><i class="icon-14"></i>${item.bedrooms} Beds</li>
+                                                <li><i class="icon-15"></i>${item.bathrooms} Baths</li>
+                                                <li><i class="icon-16"></i>${item.area} sq M</li>
+                                            </ul>
+                                            <div class="btn-box"><a href="property-details.html?id=${item.id}" class="theme-btn btn-two">See Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>                
+                            `;
+                            document.getElementById('Popular-list').appendChild(propertyGrid);
+                                
+                        });
+                    } else {
+                        alert('ไม่พบข้อมูล'); // แจ้งถ้าไม่มีข้อมูล
+                    }                    
+                })
+        } catch (error) {
+            console.error('Error during login:', error);
+            alert('An error occurred during login.');
+        }
+    }
+</script>
 
 </body><!-- End of .page_wrapper -->
 </html>

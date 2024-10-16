@@ -123,7 +123,7 @@
                             <li><a href="index.html"><i class="fab fa-vimeo-v"></i></a></li-->
                         </ul>
                         <div class="sign-box">
-                            <a href="signin.html"><i class="fas fa-user"></i>ลงชื่อใช้งาน</a>
+                            <a href="pages/login.html" target="_blank"><i class="fas fa-user"></i>ลงชื่อใช้งาน</a>
                         </div>
                     </div>
                 </div>
@@ -177,12 +177,12 @@
                                                 <li><a href="property-list-3.html">- บ้านรีโนเวท</a>
                                             </ul>
                                         </li>
-                                        <li class="dropdown"><a><span>เอเจน</span></a>
+                                        <!--li class="dropdown"><a><span>เอเจน</span></a>
                                             <ul>
                                                 <li><a href="agency-list.html">- รายชื่อเอเจน</a></li>
                                                 <li><a href="agency-details.html">- รายละเอียดเอเจน</a></li>
                                             </ul>
-                                        </li>
+                                        </li-->
                                         <li class="current"><a href="contact.html"><span>ติดต่อ</span></a></li> 
                                     </ul>
                                 </div>
@@ -266,8 +266,8 @@
         <section class="property-page-section property-list">
             <div class="auto-container">
                 <div class="row clearfix">
-                    <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-                        <!--div class="default-sidebar property-sidebar">
+                    <!--<div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                        div class="default-sidebar property-sidebar">
                             <div class="filter-widget sidebar-widget">
                                 <div class="widget-title">
                                     <h5>Property</h5>
@@ -368,10 +368,10 @@
                                     <li><a href="property-details.html">Hardwood Flows <span>(9)</span></a></li>
                                 </ul>
                             </div>
-                        </div-->
-                    </div>
+                        </div
+                    </div>-->
 <!-- /***********************************************************************************************************************************/ -->
-                    <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                    <div class="col-lg-12 col-md-12 col-sm-12 content-side">
                         <div class="property-content-side">
                             <div class="item-shorting clearfix">
                                 <div class="left-column pull-left">
@@ -398,8 +398,8 @@
                     <!-- /***********************************************************************************************************************************/ -->
                             <div class="wrapper list">
                                 <div class="deals-list-content list-item">
-
-                                    <div class="deals-block-one">
+                                    <div id="all-property-list"></div>
+                                    <!-- <div class="deals-block-one">
                                         <div class="inner-box">
                                             <div class="image-box">
                                                 <figure class="image"><img src="assets/images/feature/VillaDo_370*250.png" alt=""></figure>
@@ -430,16 +430,12 @@
                                                 </ul>
                                                 <div class="other-info-box clearfix">
                                                     <div class="btn-box pull-left"><a href="property-details.html" class="theme-btn btn-two">See Details</a></div>
-                                                    <!--ul class="other-option pull-right clearfix">
-                                                        <li><a href="property-details.html"><i class="icon-12"></i></a></li>
-                                                        <li><a href="property-details.html"><i class="icon-13"></i></a></li>
-                                                    </ul-->
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
-                                    <div class="deals-block-one">
+                                    <!-- <div class="deals-block-one">
                                         <div class="inner-box">
                                             <div class="image-box">
                                                 <figure class="image"><img src="assets/images/feature/AEK_300*350.png" alt=""></figure>
@@ -468,16 +464,12 @@
                                                 </ul>
                                                 <div class="other-info-box clearfix">
                                                     <div class="btn-box pull-left"><a href="property-details.html" class="theme-btn btn-two">See Details</a></div>
-                                                    <!--ul class="other-option pull-right clearfix">
-                                                        <li><a href="property-details.html"><i class="icon-12"></i></a></li>
-                                                        <li><a href="property-details.html"><i class="icon-13"></i></a></li>
-                                                    </ul-->
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
-                                    <div class="deals-block-one">
+                                    <!-- <div class="deals-block-one">
                                         <div class="inner-box">
                                             <div class="image-box">
                                                 <figure class="image"><img src="assets/images/resource/deals-5.jpg" alt=""></figure>
@@ -513,9 +505,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
-                                    <div class="deals-block-one">
+                                    <!-- <div class="deals-block-one">
                                         <div class="inner-box">
                                             <div class="image-box">
                                                 <figure class="image"><img src="assets/images/resource/deals-6.jpg" alt=""></figure>
@@ -552,8 +544,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="deals-block-one">
+                                    </div> -->
+                                    <!-- <div class="deals-block-one">
                                         <div class="inner-box">
                                             <div class="image-box">
                                                 <figure class="image"><img src="assets/images/resource/deals-7.jpg" alt=""></figure>
@@ -590,12 +582,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="deals-grid-content grid-item">
-                                    <div class="row clearfix">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
+                                    <div class="row clearfix" id="all-property-grid">
+                                        <!-- <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
                                             <div class="feature-block-one">
                                                 <div class="inner-box">
                                                     <div class="image-box">
@@ -617,10 +609,7 @@
                                                                 <h6>Start From</h6>
                                                                 <h4>฿ 7,990,000 </h4>
                                                             </div>
-                                                            <!--ul class="other-option pull-right clearfix">
-                                                                <li><a href="property-details.html"><i class="icon-12"></i></a></li>
-                                                                <li><a href="property-details.html"><i class="icon-13"></i></a></li>
-                                                            </ul-->
+                                                           
                                                         </div>
                                                         <ul class="more-details clearfix">
                                                             <li><i class="icon-14"></i>4 Beds</li>
@@ -631,9 +620,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         
-                                        <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
+                                        <!-- <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
                                             <div class="feature-block-one">
                                                 <div class="inner-box">
                                                     <div class="image-box">
@@ -655,10 +644,7 @@
                                                                 <h6>ราคาเริ่มต้น</h6>
                                                                 <h4>2,490,000</h4>
                                                             </div>
-                                                            <!--ul class="other-option pull-right clearfix">
-                                                                <li><a href="property-details.html"><i class="icon-12"></i></a></li>
-                                                                <li><a href="property-details.html"><i class="icon-13"></i></a></li>
-                                                            </ul-->
+                                                            
                                                         </div>
                                                         <ul class="more-details clearfix">
                                                             <li><i class="icon-14"></i>2 Beds</li>
@@ -669,9 +655,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
-                                        <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
+                                        <!-- <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
                                             <div class="feature-block-one">
                                                 <div class="inner-box">
                                                     <div class="image-box">
@@ -708,8 +694,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
+                                        </div> -->
+                                        <!-- <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
                                             <div class="feature-block-one">
                                                 <div class="inner-box">
                                                     <div class="image-box">
@@ -746,8 +732,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
+                                        </div> -->
+                                        <!-- <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
                                             <div class="feature-block-one">
                                                 <div class="inner-box">
                                                     <div class="image-box">
@@ -784,8 +770,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
+                                        </div> -->
+                                        <!-- <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
                                             <div class="feature-block-one">
                                                 <div class="inner-box">
                                                     <div class="image-box">
@@ -822,7 +808,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -981,6 +967,142 @@
 
     <!-- main-js -->
     <script src="assets/js/script.js"></script>
+
+    <script>
+        // ใช้ Fetch API เพื่อดึงข้อมูลจาก backend
+        fetch('/api/getPropertyByCategory', {
+                method: 'POST', // ใช้ POST แทน GET
+                headers: {
+                    'Content-Type': 'application/json', // กำหนด Content-Type เป็น JSON
+                },
+                body: JSON.stringify({ id: "1" }) // ส่ง id ผ่าน body ของ POST request
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json(); // แปลง response ให้เป็น JSON
+            })
+            .then(data => {
+                if (data && Array.isArray(data)) {
+                    // วนลูปข้อมูลที่ได้รับ
+                    data.forEach(item => {
+                        // ทำการเข้าถึงแต่ละ item ของข้อมูล
+
+                        const propertyBlock = document.createElement('div');
+                        propertyBlock.className = 'deals-block-one';
+                        propertyBlock.innerHTML = `
+                        <div class="deals-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                
+                                                <figure class="image"><img src="assets/images/property/${item.titleImage}" alt=""></figure>
+                                                <div class="batch"><i class="icon-11"></i></div>
+                                                <span class="category">คุณสมบัติ</span>
+                                                <div class="buy-btn"><a href="property-details.html?id=${item.id}">For SALE</a></div>
+                                            </div>
+                                            <div class="lower-content">
+                                                <div class="title-text">
+                                                    <h4><a href="property-details.html?id=${item.id}">${item.title}</a>
+                                                    </h4>
+                                                </div>
+                                                <div class="price-box clearfix">
+                                                    <div class="price-info pull-left">
+                                                        <h6>ราคาเริ่มต้น</h6>
+                                                        <h4>฿ ${parseFloat(item.price).toLocaleString('en-US')} </h4>
+                                                    </div>
+                                                    <div class="author-box pull-right">
+                                                        <figure class="author-thumb">
+                                                            <img src="assets/images/feature/author-1.jpg" alt="">
+                                                            <span>${item.agent}</span>
+                                                        </figure>
+                                                    </div>
+                                                </div>
+                                                <ul class="more-details clearfix">
+                                                    <!--<p>บ้านเดี่ยว 2 ชั้น</p>-->
+                                                    <li><i class="icon-14"></i>${item.bedrooms} Beds</li>
+                                                    <li><i class="icon-15"></i>${item.bathrooms} Baths</li>
+                                                    <li><i class="icon-16"></i>${item.area} sq M</li>
+                                                </ul>
+                                                <div class="other-info-box clearfix">
+                                                    <div class="btn-box pull-left"><a href="property-details.html?id=${item.id}"
+                                                            class="theme-btn btn-two">See Details</a></div>
+                                                    <!--ul class="other-option pull-right clearfix">
+                                                <li><a href="property-details.html?id=${item.id}"><i class="icon-12"></i></a></li>
+                                                <li><a href="property-details.html?id=${item.id}"><i class="icon-13"></i></a></li>
+                                            </ul-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                    `;
+
+                        // เพิ่ม propertyBlock ลงใน element ที่มี id="all-property-list"
+                        document.getElementById('all-property-list').appendChild(propertyBlock);
+// เพิ่ม propertyBlock ลงใน element ที่มี id="all-property-list"
+document.getElementById('all-property-list').appendChild(propertyBlock);
+                        const propertyGrid = document.createElement('div');
+                        propertyGrid.className = 'col-lg-6 col-md-6 col-sm-12 feature-block';
+                        propertyGrid.innerHTML = `
+                                                <div class="feature-block-one">
+                                                    <div class="inner-box">
+                                                        <div class="image-box">
+                                                            <figure class="image"><img
+                                                                    src="assets/images/property/${item.titleImage}" alt="">
+                                                            </figure>
+                                                            <div class="batch"><i class="icon-11"></i></div>
+                                                            <span class="category">Featured</span>
+                                                        </div>
+                                                        <div class="lower-content">
+                                                            <div class="author-info clearfix">
+                                                                <div class="author pull-left">
+                                                                    <figure class="author-thumb"><img
+                                                                            src="assets/images/feature/author-1.jpg" alt="">
+                                                                    </figure>
+                                                                    <h6>${item.agent}</h6>
+                                                                </div>
+                                                                <div class="buy-btn pull-right"><a
+                                                                        href="property-details.html?id=${item.id}"">For Buy</a></div>
+                                                            </div>
+                                                            <div class="title-text">
+                                                                <h4><a href="property-details.html?id=${item.id}"">${item.title}</a>
+                                                                </h4>
+                                                            </div>
+                                                            <div class="price-box clearfix">
+                                                                <div class="price-info pull-left">
+                                                                    <h6>Start From</h6>
+                                                                    <h4>฿ ${parseFloat(item.price).toLocaleString('en-US')}</h4>
+                                                                </div>
+                                                                <!--<ul class="other-option pull-right clearfix">
+                                                                    <li><a href="property-details.html?id=${item.id}""><i
+                                                                                class="icon-12"></i></a></li>
+                                                                    <li><a href="property-details.html?id=${item.id}""><i
+                                                                                class="icon-13"></i></a></li>
+                                                                </ul>-->
+                                                            </div>
+                                                            <!--<p>Lorem ipsum dolor sit amet consectetur adipisicing sed.</p>-->
+                                                            <ul class="more-details clearfix">
+                                                                <li><i class="icon-14"></i>${item.bedrooms} Beds</li>
+                                                                <li><i class="icon-15"></i>${item.bathrooms} Baths</li>
+                                                                <li><i class="icon-16"></i>${item.area} sq M</li>
+                                                            </ul>
+                                                            <div class="btn-box"><a href="property-details.html?id=${item.id}""
+                                                                    class="theme-btn btn-two">See Details</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                        `;
+                        document.getElementById('all-property-grid').appendChild(propertyGrid);
+                    });
+                } else {
+                    alert('ไม่พบข้อมูล'); // แจ้งถ้าไม่มีข้อมูล
+                }
+            })
+            .catch(error => {
+                console.error('เกิดข้อผิดพลาด:', error);
+            });
+    </script>
 
 </body><!-- End of .page_wrapper -->
 </html>

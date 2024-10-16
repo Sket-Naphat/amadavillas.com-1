@@ -10143,6 +10143,9 @@ a.text-dark:hover, a.text-dark:focus {
   visibility: hidden !important;
 }
 
+.hide{
+  display: none;
+}
 @media print {
   *,
   *::before,

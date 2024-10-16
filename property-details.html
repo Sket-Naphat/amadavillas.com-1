@@ -27,7 +27,13 @@
 <link href="assets/css/switcher-style.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
-
+<style>
+    .detail-titleImage {
+    max-height: 800px; /* กำหนดความสูงสูงสุด */
+    width: auto; /* ให้ความกว้างปรับตามอัตราส่วน */
+    object-fit: cover; /* ทำให้ภาพเต็มพื้นที่ */
+}
+</style>
 </head>
 
 
@@ -126,7 +132,7 @@
                             <li><a href="index.html"><i class="fab fa-vimeo-v"></i></a></li-->
                         </ul>
                         <div class="sign-box">
-                            <a href="signin.html"><i class="fas fa-user"></i>ลงชื่อใช้งาน</a>
+                            <a href="pages/login.html" target="_blank"><i class="fas fa-user"></i>ลงชื่อใช้งาน</a>
                         </div>
                     </div>
                 </div>
@@ -270,19 +276,20 @@
             <div class="auto-container">
                 <div class="top-details clearfix">
                     <div class="left-column pull-left clearfix">
-                        <h3>Home Office</h3>
+                        <!-- <h3>Home Office</h3> -->
+                        <h3 class="detail-title"></h3>
                         <div class="author-info clearfix">
                             <div class="author-box pull-left">
                                 <figure class="author-thumb"><img src="assets/images/feature/author-1.jpg" alt=""></figure>
-                                <h6>K'JOHN</h6>
+                                <h6 class="detail-agent">K'JOHNy</h6>
                             </div>
-                            <!--ul class="rating clearfix pull-left">
+                            <!-- <ul class="rating clearfix pull-left">
                                 <li><i class="icon-39"></i></li>
                                 <li><i class="icon-39"></i></li>
                                 <li><i class="icon-39"></i></li>
                                 <li><i class="icon-39"></i></li>
                                 <li><i class="icon-40"></i></li>
-                            </ul-->
+                            </ul> -->
                         </div>
                     </div>
                     <div class="right-column pull-right clearfix">
@@ -292,7 +299,8 @@
                                 <li><a>For Rent</a></li>
                             </ul>
                             <div class="price-box pull-right">
-                                <h3>฿ 50,000 / Month</h3>
+                                <!-- <h3>฿ 50,000 / Month</h3> -->
+                                <h3 class="detail-price"></h3>
                             </div>
                         </div>
                         <!--ul class="other-option pull-right clearfix">
@@ -304,21 +312,22 @@
                     </div>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                    <div class="col-lg-12 col-md-12 col-sm-12 content-side">
                         <div class="property-details-content">
-                            <div class="carousel-inner">
-                                <div class="single-item-carousel owl-carousel owl-theme owl-dots-none">
-                                    <figure class="image-box"><img src="assets/images/resource/Home_770*520.png" alt=""></figure>
-                                    <figure class="image-box"><img src="assets/images/resource/Map_770*520.png" alt=""></figure>
-                                </div>
+                            <div class="carousel-inner" id="showImageDetail">
+                                <!-- <div class="single-item-carousel owl-carousel owl-theme owl-dots-none" >
+                                    <figure class="image-box"><img class="detail-titleImage" src="assets/images/property/0_Home office.jpeg" alt=""></figure>
+                                    <figure class="image-box"><img class="detail-titleImage" src="assets/images/property/1_Home_570_410.png" alt=""></figure>
+                                    <figure class="image-box"><img class="detail-titleImage" src="assets/images/property/2_à¸à¸µà¹à¸à¸´à¸_90_90.png" alt=""></figure>
+                                </div> -->
                             </div>
                             <div class="discription-box content-widget">
                                 <div class="title-box">
                                     <h4>รายละเอียดอสังหาริมทรัพย์</h4>
                                 </div>
                                 <div class="text">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing sed eiusm tempor incididunt labore dolore magna aliqua enim minim veniam quis nostrud exercitation laboris nisi ut aliquip ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur occaecat</p>
-                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim  est laborum. Sed perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium totam rem aperiam.</p>
+                                    <p class="detail-description"></p>
+                                    <!-- <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim  est laborum. Sed perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium totam rem aperiam.</p> -->
                                 </div>
                             </div>
  <!-- /***********************************************************************************************************************************/ -->                                 
@@ -327,17 +336,17 @@
                                     <h4>Property Details</h4>
                                 </div>
                                 <ul class="list clearfix">
-                                    <li>Property ID: <span> --- </span></li>
-                                    <li>Rooms: <span> --- </span></li>
-                                    <li>Garage Size: <span> --- </span></li>
-                                    <li>Property Price: <span> --- </span></li>
-                                    <li>Bedrooms: <span> --- </span></li>
-                                    <li>Year Built: <span> --- </span></li>
-                                    <li>Property Type: <span> --- </span></li>
-                                    <li>Bathrooms: <span> --- </span></li>
-                                    <li>Property Status: <span> --- </span></li>
-                                    <li>Property Size: <span> --- </span></li>
-                                    <li>Garage: <span> --- </span></li>
+                                    <!-- <li>Property ID: <span> --- </span></li> -->
+                                    <!-- <li>Rooms: <span> --- </span></li> -->
+                                    <!-- <li>Garage Size: <span> --- </span></li> -->
+                                    <li>Property Price: <span class="detail-price"> --- </span></li>
+                                    <li>Bedrooms: <span class="detail-bedrooms"> --- </span></li>
+                                    <!-- <li>Year Built: <span> --- </span></li> -->
+                                    <li>Property Type: <span class="detail-propertyCategory"> --- </span></li>
+                                    <li>Bathrooms: <span class="detail-bathrooms"> --- </span></li>
+                                    <!-- <li>Property Status: <span> --- </span></li> -->
+                                    <li>Property Size: <span class="detail-area"> --- </span></li>
+                                    <!-- <li>Garage: <span> --- </span></li> -->
                                 </ul>
                             </div>
 <!-- /***********************************************************************************************************************************/ -->                           
@@ -621,7 +630,7 @@
                         </div>
                     </div>
 <!-- /***********************************************************************************************************************************/ -->  
-                    <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                    <!-- <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                         <div class="property-sidebar default-sidebar">
                             <div class="author-widget sidebar-widget">
                                 <div class="author-box">
@@ -654,7 +663,7 @@
                                         </div>
                                     </form>
                                 </div>
-                            </div>
+                            </div> -->
 <!-- /***********************************************************************************************************************************/ -->                              
                             <!--div class="calculator-widget sidebar-widget">
                                 <div class="calculate-inner">
@@ -967,6 +976,111 @@
 
     <!-- main-js -->
     <script src="assets/js/script.js"></script>
+    
+    <script>
+        // ฟังก์ชันเพื่อดึงค่า id จาก URL
+        function getIdFromURL() {
+          const urlParams = new URLSearchParams(window.location.search); // สร้าง URLSearchParams จาก query string
+          const id = urlParams.get('id'); // ดึงค่า 'id'
+          GetPropertyListByID(id);
+          return id;
+        }
+      
+        // ใช้ฟังก์ชันเพื่อรับค่า id
+        const propertyId = getIdFromURL();
+        console.log('Property ID:', propertyId); // แสดงค่า id ใน console
+
+
+            async function GetPropertyListByID(id) {
+            try {
+            const response = await fetch('/api/getPropertyById', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id }), // ส่ง id ผ่าน body ของ request
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                // แสดงผลข้อมูล property ใน modal
+                // document.getElementsByClassName('detail-title')[0].textContent = result.property.title;
+                //document.getElementsByClassName('detail-price')[0].textContent = result.property.price;
+                
+
+                // เปลี่ยนชื่อใน class เดียวกัน
+                document.querySelectorAll('.detail-title').forEach(element => {
+                element.textContent = result.property.title;
+                });
+                document.querySelectorAll('.detail-price').forEach(element => {
+                    const price = parseFloat(result.property.price); // แปลงค่า price ให้เป็นตัวเลข (float)    
+                    if (!isNaN(price)) {
+                        element.textContent = price.toLocaleString('en-US') + " บาท(Baht)"; // จัดรูปแบบใหม่
+                    } else {
+                        element.textContent = result.property.price; // ถ้าไม่สามารถแปลงได้ให้แสดงค่าเดิม
+                    }
+                });
+                document.querySelectorAll('.detail-agent').forEach(element => {
+                    element.textContent = result.property.agent;
+                });
+                document.querySelectorAll('.detail-description').forEach(element => {
+                    element.textContent = result.property.description;
+                });
+                document.querySelectorAll('.detail-bedrooms').forEach(element => {
+                    element.textContent = result.property.bedrooms;
+                });
+                document.querySelectorAll('.detail-propertyCategory').forEach(element => {
+                    element.textContent = result.property.propertyCategory;
+                });
+                document.querySelectorAll('.detail-bathrooms').forEach(element => {
+                    element.textContent = result.property.bathrooms;
+                });
+                document.querySelectorAll('.detail-area').forEach(element => {
+                    element.textContent = result.property.area + " sq M";
+                });
+
+
+                // สร้าง propertyBlock เพื่อเพิ่มรูปภาพ
+                const propertyBlock = document.createElement('div');
+                propertyBlock.className = 'single-item-carousel owl-carousel owl-theme owl-dots-none';
+                propertyBlock.innerHTML += `
+                        <figure class="image-box">
+                            <img class="detail-titleImage" src="assets/images/property/${result.property.titleImage}" alt="">
+                        </figure>
+                    `;
+
+                result.property.imageFileNames.forEach(img => {
+                    propertyBlock.innerHTML += `
+                        <figure class="image-box">
+                            <img class="detail-titleImage" src="assets/images/property/${img}" alt="">
+                        </figure>
+                    `;
+                });
+
+                // เพิ่ม propertyBlock เข้าไปใน showImageDetail
+                document.getElementById('showImageDetail').appendChild(propertyBlock);
+
+                // เรียกใช้ Owl Carousel หลังจากเพิ่มรูปภาพ
+                $(propertyBlock).owlCarousel({
+                    loop: true,
+                    margin: 30,
+                    nav: true,
+                    items: 1,
+                    autoplay: true,
+                    autoplayTimeout: 3000,
+                    dots: true
+                });
+                
+            } else {
+                console.error('Error fetching property details:', result.message);
+            }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+      </script>
+      
 
 </body><!-- End of .page_wrapper -->
 </html>

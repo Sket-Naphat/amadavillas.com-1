@@ -109,25 +109,25 @@
       </div>
     </div>
   </div>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script> -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script> -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script> -->
   <script>
     // Firebase configuration object
-    const firebaseConfig = {
-      apiKey: "AIzaSyC7AopHI436i396IBfIz8o6-8VCi7Hb618",
-      authDomain: "webpro-c1c55.firebaseapp.com",
-      databaseURL: "https://webpro-c1c55-default-rtdb.firebaseio.com",
-      projectId: "webpro-c1c55",
-      storageBucket: "webpro-c1c55.appspot.com",
-      messagingSenderId: "13975027825",
-      appId: "1:13975027825:web:608b3c43ec034d10671bd0",
-      measurementId: "G-G6QXYR88MW"
-    };
+    // const firebaseConfig = {
+    //   apiKey: "AIzaSyC7AopHI436i396IBfIz8o6-8VCi7Hb618",
+    //   authDomain: "webpro-c1c55.firebaseapp.com",
+    //   databaseURL: "https://webpro-c1c55-default-rtdb.firebaseio.com",
+    //   projectId: "webpro-c1c55",
+    //   storageBucket: "webpro-c1c55.appspot.com",
+    //   messagingSenderId: "13975027825",
+    //   appId: "1:13975027825:web:608b3c43ec034d10671bd0",
+    //   measurementId: "G-G6QXYR88MW"
+    // };
 
-    firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
-  const db = firebase.firestore();
+  //   firebase.initializeApp(firebaseConfig);
+  // const auth = firebase.auth();
+  // const db = firebase.firestore();
 
   function sanitizeEmail(email) {
     return email.replace(/[@.]/g, '_');
@@ -139,39 +139,84 @@
   }
 
 
+  // document.getElementById('registerForm').addEventListener('submit', async (e) => {
+  //   e.preventDefault();
+
+  //   const firstName = document.getElementById('firstName').value;
+  //   const lastName = document.getElementById('lastName').value;
+  //   const dateOfBirth = document.getElementById('dateOfBirth').value;
+  //   const gender = document.getElementById('gender').value;
+  //   const phoneNumber = document.getElementById('phoneNumber').value;
+  //   const email = document.getElementById('email').value;
+  //   const password = document.getElementById('password').value;
+
+  //   try {
+  //     const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+  //     const user = userCredential.user;
+
+  //     const sanitizedEmail = sanitizeEmail(email);
+
+  //     await db.collection('profile').doc(sanitizedEmail).set({
+  //       firstName,
+  //       lastName,
+  //       dateOfBirth,
+  //       gender,
+  //       phoneNumber,
+  //       email,
+  //       role: 'user' 
+  //     });
+
+  //     alert('Account created successfully!');
+  //     resetRegistrationForm(); 
+  //   } catch (error) {
+  //     alert(error.message);
+  //   }
+  // });
+
   document.getElementById('registerForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const firstName = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
-    const dateOfBirth = document.getElementById('dateOfBirth').value;
-    const gender = document.getElementById('gender').value;
-    const phoneNumber = document.getElementById('phoneNumber').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+  const firstName = document.getElementById('firstName').value;
+  const lastName = document.getElementById('lastName').value;
+  const dateOfBirth = document.getElementById('dateOfBirth').value;
+  const gender = document.getElementById('gender').value;
+  const phoneNumber = document.getElementById('phoneNumber').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
 
-    try {
-      const userCredential = await auth.createUserWithEmailAndPassword(email, password);
-      const user = userCredential.user;
-
-      const sanitizedEmail = sanitizeEmail(email);
-
-      await db.collection('profile').doc(sanitizedEmail).set({
+  try {
+    // เรียก API /api/insertUser ผ่าน fetch
+    const response = await fetch('/api/insertUser', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
         firstName,
         lastName,
         dateOfBirth,
         gender,
         phoneNumber,
         email,
-        role: 'user' 
-      });
+        password
+      })
+    });
 
+    // ตรวจสอบสถานะของการตอบกลับจากเซิร์ฟเวอร์
+    const result = await response.json();
+
+    if (response.ok && result.success) {
       alert('Account created successfully!');
-      resetRegistrationForm(); 
-    } catch (error) {
-      alert(error.message);
+      resetRegistrationForm();  // ล้างฟอร์ม
+    } else {
+      alert(result.message || 'Error inserting user data.');
     }
-  });
+  } catch (error) {
+    console.error('Error during form submission:', error);
+    alert('An error occurred.');
+  }
+});
+
 </script>
 </body>
 
