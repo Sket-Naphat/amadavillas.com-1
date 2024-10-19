@@ -2,7 +2,11 @@
 const admin = require('firebase-admin');
 
 // นำเข้าไฟล์คีย์ของ Service Account (ใส่ path ที่ถูกต้องของไฟล์ JSON)
-const serviceAccount = require('D:/Sket/deck_project/amadavillas.com/assets/ihome1168backoffice-firebase-adminsdk-g8s0m-b21860e14b.json');
+//const serviceAccount = require('D:/Sket/deck_project/amadavillas.com/assets/ihome1168backoffice-firebase-adminsdk-g8s0m-b21860e14b.json');
+const path = require('path');
+
+// ใช้ __dirname เพื่อ map path จากตำแหน่งของไฟล์ fire-store-DB.js
+const serviceAccount = require(path.join(__dirname, '../ihome1168backoffice-firebase-adminsdk-g8s0m-b21860e14b.json'));
 
 // กำหนดค่า Firebase Admin
 admin.initializeApp({

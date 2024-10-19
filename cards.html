@@ -731,8 +731,8 @@
 
             <!-- Checkbox รูปดาว -->
             <label for="starCheckbox-${property.id}" class="cursor-pointer">
-              <input id="starCheckbox-${property.id}" type="checkbox" class="hidden" onchange="toggleStar(this, '${property.id}')" ${starChecked} />
-              <svg class="w-6 h-6 ${starColor} fill-current star-icon transition-colors duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <input id="starCheckbox-${property.id}" type="checkbox" title="Add to popular list" class="hidden" onchange="toggleStar(this, '${property.id}')" ${starChecked} />
+              <svg style="cursor: pointer;" title="Add to popular list" class="w-6 h-6 ${starColor} fill-current star-icon transition-colors duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.618 4.995a1 1 0 00.95.69h5.258c.969 0 1.371 1.24.588 1.81l-4.28 3.112a1 1 0 00-.364 1.118l1.618 4.995c.3.921-.755 1.688-1.538 1.118l-4.28-3.112a1 1 0 00-1.176 0l-4.28 3.112c-.783.57-1.838-.197-1.538-1.118l1.618-4.995a1 1 0 00-.364-1.118L.733 9.432c-.783-.57-.381-1.81.588-1.81h5.258a1 1 0 00.95-.69l1.618-4.995z" />
               </svg>
             </label>

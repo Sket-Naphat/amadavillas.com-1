@@ -272,7 +272,7 @@ app.post('/api/getPopularProperty', async (req, res) => { // เปลี่ย�
       const alldata = await getData('property-list');
       let  data = alldata;
       
-      data = data.filter(property => property.isPopular);
+      data = data.filter(property => property.isPopular === 'true');
 
       res.json(data); // ส่งข้อมูลกลับในรูปแบบ JSON
   } catch (error) {
